@@ -1,5 +1,6 @@
 import { FormEvent, ReactElement, useState } from "react";
 import axios from "axios";
+import styled from "@emotion/styled";
 
 const SignupForm = () => {
   const [userId, setUserId] = useState("testid");
@@ -17,15 +18,24 @@ const SignupForm = () => {
   };
 
   return (
-    <div>
+    <Base>
       <h2>Register</h2>
-      <form onSubmit={handleRegister}>
+      <Form onSubmit={handleRegister}>
         <input type="text" value={userId} onChange={(e) => setUserId(e.target.value)} />
         <input type="password" value={userPw} onChange={(e) => setUserPw(e.target.value)} />
         <button type="submit">Register</button>
-      </form>
-    </div>
+      </Form>
+    </Base>
   );
 };
+
+const Base = styled.div``;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+`;
 
 export default SignupForm;

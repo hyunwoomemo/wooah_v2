@@ -137,7 +137,8 @@ const defaultStyle = css``;
 const GlobalStyle = () => {
   return (
     <>
-      <Global styles={resetStyle}></Global>;<Global styles={defaultStyle}></Global>;
+      <Global styles={resetStyle}></Global>
+      <Global styles={defaultStyle}></Global>
     </>
   );
 };
